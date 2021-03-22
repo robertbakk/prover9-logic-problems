@@ -1,0 +1,278 @@
+% Saved by Prover9-Mace4 Version 0.5, December 2007.
+
+set(ignore_option_dependencies). % GUI handles dependencies
+
+if(Prover9). % Options for Prover9
+  assign(max_seconds, 60).
+end_if.
+
+if(Mace4).   % Options for Mace4
+  assign(max_seconds, 60).
+end_if.
+
+formulas(assumptions).
+
+ differentFrom(a,b).
+ differentFrom(a,c).
+ differentFrom(a,d).
+ differentFrom(a,e).
+ differentFrom(b,c).
+ differentFrom(b,d).
+ differentFrom(b,e).
+ differentFrom(c,d).
+ differentFrom(c,e).
+ differentFrom(d,e).
+ differentFrom(x,y) ->  differentFrom(y,x).
+
+ rightneighbor(a,b).
+ rightneighbor(b,c).
+ rightneighbor(c,d).
+ rightneighbor(d,e).
+ -rightneighbor(a,a).
+ -rightneighbor(a,c).
+ -rightneighbor(a,d).
+ -rightneighbor(a,e).
+ -rightneighbor(b,a).
+ -rightneighbor(b,b).
+ -rightneighbor(b,d).
+ -rightneighbor(b,e).
+ -rightneighbor(c,a).
+ -rightneighbor(c,b).
+ -rightneighbor(c,c).
+ -rightneighbor(c,e).
+ -rightneighbor(d,a).
+ -rightneighbor(d,b).
+ -rightneighbor(d,c).
+ -rightneighbor(d,d).
+ -rightneighbor(e,a).
+ -rightneighbor(e,b).
+ -rightneighbor(e,c).
+ -rightneighbor(e,d).
+ -rightneighbor(e,e).
+ rightneighbor(x,y) | rightneighbor(y,x) <-> neighbor(x,y).
+
+ somewhereRight(a,b).
+ somewhereRight(a,c).
+ somewhereRight(a,d).
+ somewhereRight(a,e).
+ somewhereRight(b,c).
+ somewhereRight(b,d).
+ somewhereRight(b,e).
+ somewhereRight(c,d).
+ somewhereRight(c,e).
+ somewhereRight(d,e).
+ -somewhereRight(a,a).
+ -somewhereRight(b,a).
+ -somewhereRight(b,b).
+ -somewhereRight(c,a).
+ -somewhereRight(c,b).
+ -somewhereRight(c,c).
+ -somewhereRight(d,a).
+ -somewhereRight(d,b).
+ -somewhereRight(d,c).
+ -somewhereRight(d,d).
+ -somewhereRight(e,a).
+ -somewhereRight(e,b).
+ -somewhereRight(e,c).
+ -somewhereRight(e,d).
+ -somewhereRight(e,e).
+
+ between(b,a,c).
+ between(b,a,d).
+ between(b,a,e).
+ between(c,a,d).
+ between(c,a,e).
+ between(c,b,d).
+ between(c,b,e).
+ between(d,a,e).
+ between(d,b,e).
+ between(d,c,e).
+ -between(a,a,a).
+ -between(a,a,b).
+ -between(a,a,c).
+ -between(a,a,d).
+ -between(a,a,e).
+ -between(a,b,a).
+ -between(a,b,b).
+ -between(a,b,c).
+ -between(a,b,d).
+ -between(a,b,e).
+ -between(a,c,a).
+ -between(a,c,b).
+ -between(a,c,c).
+ -between(a,c,d).
+ -between(a,c,e).
+ -between(a,d,a).
+ -between(a,d,b).
+ -between(a,d,c).
+ -between(a,d,d).
+ -between(a,d,e).
+ -between(a,e,a).
+ -between(a,e,b).
+ -between(a,e,c).
+ -between(a,e,d).
+ -between(a,e,e).
+ -between(b,a,a).
+ -between(b,a,b).
+ -between(b,b,a).
+ -between(b,b,b).
+ -between(b,b,c).
+ -between(b,b,d).
+ -between(b,b,e).
+ -between(b,c,a).
+ -between(b,c,b).
+ -between(b,c,c).
+ -between(b,c,d).
+ -between(b,c,e).
+ -between(b,d,a).
+ -between(b,d,b).
+ -between(b,d,c).
+ -between(b,d,d).
+ -between(b,d,e).
+ -between(b,e,a).
+ -between(b,e,b).
+ -between(b,e,c).
+ -between(b,e,d).
+ -between(b,e,e).
+ -between(c,a,a).
+ -between(c,a,b).
+ -between(c,a,c).
+ -between(c,b,a).
+ -between(c,b,b).
+ -between(c,b,c).
+ -between(c,c,a).
+ -between(c,c,b).
+ -between(c,c,c).
+ -between(c,c,d).
+ -between(c,c,e).
+ -between(c,d,a).
+ -between(c,d,b).
+ -between(c,d,c).
+ -between(c,d,d).
+ -between(c,d,e).
+ -between(c,e,a).
+ -between(c,e,b).
+ -between(c,e,c).
+ -between(c,e,d).
+ -between(c,e,e).
+ -between(d,a,a).
+ -between(d,a,b).
+ -between(d,a,c).
+ -between(d,a,d).
+ -between(d,b,a).
+ -between(d,b,b).
+ -between(d,b,c).
+ -between(d,b,d).
+ -between(d,c,a).
+ -between(d,c,b).
+ -between(d,c,c).
+ -between(d,c,d).
+ -between(d,d,a).
+ -between(d,d,b).
+ -between(d,d,c).
+ -between(d,d,d).
+ -between(d,d,e).
+ -between(d,e,a).
+ -between(d,e,b).
+ -between(d,e,c).
+ -between(d,e,d).
+ -between(d,e,e).
+ -between(e,a,a).
+ -between(e,a,b).
+ -between(e,a,c).
+ -between(e,a,d).
+ -between(e,a,e).
+ -between(e,b,a).
+ -between(e,b,b).
+ -between(e,b,c).
+ -between(e,b,d).
+ -between(e,b,e).
+ -between(e,c,a).
+ -between(e,c,b).
+ -between(e,c,c).
+ -between(e,c,d).
+ -between(e,c,e).
+ -between(e,d,a).
+ -between(e,d,b).
+ -between(e,d,c).
+ -between(e,d,d).
+ -between(e,d,e).
+ -between(e,e,a).
+ -between(e,e,b).
+ -between(e,e,c).
+ -between(e,e,d).
+ -between(e,e,e).
+ 
+ 
+ black(x) | blue(x) | green(x) | purple(x) | red(x).
+ austin(x) | james(x) | jason(x) | stan(x) | sterling(x).
+ australia(x) | brazil(x) | germany(x) | libya(x) | russia(x).
+ clock(x) | pen(x) | phone(x) | ring(x) | umbrella(x).
+ computerhacking(x) | disguise(x) | driving(x) | martialarts(x) | parkour(x).
+ age25(x) | age30(x) | age35(x) | age40(x) | age45(x).
+
+ black(x) & black(y) -> -differentFrom(x,y).
+ blue(x) & blue(y) -> -differentFrom(x,y).
+ green(x) & green(y) -> -differentFrom(x,y).
+ purple(x) & purple(y) -> -differentFrom(x,y).
+ red(x) & red(y) -> -differentFrom(x,y).
+
+ austin(x) & austin(y) -> -differentFrom(x,y).
+ james(x) & james(y) -> -differentFrom(x,y).
+ jason(x) & jason(y) -> -differentFrom(x,y).
+ stan(x) & stan(y) -> -differentFrom(x,y).
+ sterling(x) & sterling(y) -> -differentFrom(x,y).
+
+ australia(x) & australia(y) -> -differentFrom(x,y).
+ brazil(x) & brazil(y) -> -differentFrom(x,y).
+ germany(x) & germany(y) -> -differentFrom(x,y).
+ libya(x) & libya(y) -> -differentFrom(x,y).
+ russia(x) & russia(y) -> -differentFrom(x,y).
+
+ clock(x) & clock(y) -> -differentFrom(x,y).
+ pen(x) & pen(y) -> -differentFrom(x,y).
+ phone(x) & phone(y) -> -differentFrom(x,y).
+ ring(x) & ring(y) -> -differentFrom(x,y).
+ umbrella(x) & umbrella(y) -> -differentFrom(x,y).
+
+ computerhacking(x) & computerhacking(y) -> -differentFrom(x,y).
+ disguise(x) & disguise(y) -> -differentFrom(x,y).
+ driving(x) & driving(y) -> -differentFrom(x,y).
+ martialarts(x) & martialarts(y) -> -differentFrom(x,y).
+ parkour(x) & parkour(y) -> -differentFrom(x,y).
+
+ age25(x) & age25(y) -> -differentFrom(x,y).
+ age30(x) & age30(y) -> -differentFrom(x,y).
+ age35(x) & age35(y) -> -differentFrom(x,y).
+ age40(x) & age40(y) -> -differentFrom(x,y).
+ age45(x) & age45(y) -> -differentFrom(x,y).
+
+ austin(x) & black(y) -> neighbor(x,y).
+ disguise(x) & umbrella(y) -> rightneighbor(y,x).
+ age35(x) <-> libya(x).
+ james(x) <-> age25(x).
+ australia(x) & parkour(y) -> neighbor(x,y).
+ james(x) & clock(y) -> rightneighbor(y,x).
+ umbrella(x) & age40(y) & austin(z) -> between (x,y,z).
+ stan(x) & russia(y) -> neighbor(x,y).
+ sterling(a) | sterling(e).
+ red(x) <-> age40(x).
+ brazil(x) & age45(y) -> rightneighbor(x,y).
+ jason(x) & austin(y) -> rightneighbor(x,y).
+ driving(x) & age30(y) -> neighbor(x,y).
+ age35(x) & australia(y) -> neighbor(x,y).
+ computerhacking(x) & age35(y) -> rightneighbor(x,y).
+ purple(x) & computerhacking(y) -> neighbor(x,y).
+ austin(x) <-> age30(x).
+ phone(x) & libya(y) -> rightneighbor(x,y).
+ ring(x) & purple(y) -> somewhereRight(y,x).
+ green(b).
+ australia(x) & age30(y) -> rightneighbor(y,x).
+
+end_of_list.
+
+formulas(goals).
+
+
+end_of_list.
+

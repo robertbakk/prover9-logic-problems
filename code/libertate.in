@@ -1,0 +1,42 @@
+% Saved by Prover9-Mace4 Version 0.5, December 2007.
+
+set(ignore_option_dependencies). % GUI handles dependencies
+
+if(Prover9). % Options for Prover9
+  assign(max_seconds, 60).
+end_if.
+
+if(Mace4).   % Options for Mace4
+  assign(max_seconds, 60).
+end_if.
+
+formulas(assumptions).
+
+ libertate1 | libertate2 | libertate3.
+ adevar1 | adevar2 | adevar3 | (adevar1 & adevar2) | (adevar3 & adevar2)| (adevar3 & adevar1).
+
+ libertate1 -> -libertate2.
+ libertate1 -> -libertate3.
+ libertate2 -> -libertate1.
+ libertate2 -> -libertate3.
+ libertate3 -> -libertate1.
+ libertate3 -> -libertate2.
+
+ adevar1 <-> libertate1.
+ adevar2 <-> -libertate2.
+ adevar3 <-> -libertate2.
+
+ -adevar1 <-> -libertate1.
+ -adevar2 <-> libertate2.
+ -adevar3 <-> libertate2.
+
+ adevar1 -> -adevar2 | -adevar3.
+ adevar2 -> -adevar1 | -adevar3.
+ adevar3 -> -adevar1 | -adevar2.
+
+end_of_list.
+
+formulas(goals).
+
+end_of_list.
+

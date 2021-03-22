@@ -1,0 +1,50 @@
+% Saved by Prover9-Mace4 Version 0.5, December 2007.
+
+set(ignore_option_dependencies). % GUI handles dependencies
+
+if(Prover9). % Options for Prover9
+  assign(max_seconds, 60).
+end_if.
+
+if(Mace4).   % Options for Mace4
+  assign(max_seconds, 60).
+end_if.
+
+formulas(assumptions).
+
+ a(x) <-> -b(x) & -c(x) & -d(x).
+ b(x) <-> -a(x) & -c(x) & -d(x).
+ c(x) <-> -a(x) & -b(x) & -d(x).
+ d(x) <-> -a(x) & -b(x) & -c(x).
+
+ a(q1) <-> -a(q2) & -a(q3) & -a(q4) & -a(q5).
+ b(q1) <-> -b(q2) & -b(q3) & -b(q4) & -b(q5).
+ c(q1) <-> -c(q2) & -c(q3) & -c(q4) & -c(q5).
+ d(q1) <-> -d(q2) & -d(q3) & -d(q4) & -d(q5).
+ 
+ a(q2) -> a(q3) & -a(q1) & -a(q4) & -a(q5).
+ b(q2) -> b(q1) & -b(q3) & -b(q4) & -b(q5).
+ c(q2) -> c(q5) & -c(q1) & -c(q3) & -c(q4).
+ d(q2) -> d(q4) & -d(q1) & -d(q3) & -d(q5).
+ 
+ a(q3) <-> b(q5).
+ b(q3) <-> d(q5).
+ c(q3) <-> a(q5).
+ d(q3) <-> c(q5).
+ 
+ a(q4) <-> a(q2) & -a(q1).
+ b(q4) <-> a(q3) & -a(q2) & -a(q1).
+ c(q4) <-> a(q4) & -a(q3) & -a(q2) & -a(q1).
+ d(q4) <-> a(q5) & -a(q4) & -a(q3) & -a(q2) & -a(q1).
+ 
+ a(q5) <-> c(q3).
+ b(q5) <-> b(q3).
+ c(q5) <-> d(q3).
+ d(q5) <-> a(q3).
+
+end_of_list.
+
+formulas(goals).
+
+end_of_list.
+
